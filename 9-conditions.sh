@@ -9,7 +9,7 @@ NUMBER=$1
 
 if [ $NUMBER -lt 10 ]
 then
-    echo "Given NUMBER $NUMBER is less then 10
+    echo "Given number $NUMBER is less than 10
 else
-    echo "Given NUMBER $NUMBER is greater then 10
+    echo "Given number $NUMBER is not less than 10
 fi
