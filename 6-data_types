@@ -1,0 +1,4 @@
+#!bin/bash
+
+TIMESTAMP=$(date)   #it executs date command  and the output of date is store in TIMESTAMP variable
+echo : "Script exceuted time is : $TIMESTAMP"

@@ -10,4 +10,4 @@ echo "Enter your pin number:"
 
 read -s PIN
 
-"YOUR name is : $PIN"
+echo "YOUR name is : $PIN"
