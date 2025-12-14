@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 
-if ( $USERID -ne 0 )
+if [ $USERID -ne 0 ]
 then
     echo "ERROR: please run this is in root user"
     exit 1 #give anything other then 0 upto 127
@@ -12,10 +12,10 @@ fi
 
 dnf install mysql -y
 
-if ($? eq 0)
+if [ $? eq 0 ]
 then
     echo "INSTALLING MYSQL....SUCCESS"
 else
     echo "INSTALLING MYSQL is failure"
     exit 1
-
+fi
