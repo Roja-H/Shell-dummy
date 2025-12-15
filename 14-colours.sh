@@ -18,7 +18,7 @@ fi
 VALIDATE(){
     if [ $1 -eq 0 ]
     then
-        echo  -e "INSTALLING $2 SUCCESS $G"
+        echo  -e " $G INSTALLING $2 SUCCESS "
     else
         echo -e "INSTALLING $2 is failure $R"
         exit 1
@@ -28,11 +28,11 @@ VALIDATE(){
 dnf list installed mysql -y
 if [ $? -ne 0 ]
 then
-    echo -e " mysql is not installed...going to install $Y "
+    echo -e " $Y mysql is not installed...going to install "
     dnf install mysql -y
     VALIDATE $? "mysql"
 else
-    echo -e " mysql is already installed ... nothing to do $G"
+    echo -e " $G mysql is already installed ... nothing to do "
 fi
 
 nf list installed python3 -y
