@@ -10,9 +10,11 @@ SCRIPT_NAME=$(echo 14-colourspart3.sh | cut -d "." -f1)
 LOG_FILES="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER #-p indicates create a folder if already present then do nothing
-USERID=$(id -u)
+
 echo "script execution started at $(date)" | tee -a $LOG_FILES
 # here tee command is used to show the basic logs on screen too and store in log_files"
+
+USERID=$(id -u)
 if [ $USERID -ne 0 ]
 then
     echo -e " $R ERROR: please run this is in root user $Y " | tee -a $LOG_FILES
@@ -31,7 +33,7 @@ VALIDATE(){
     fi
 }
 
-dnf list installed mysql -y
+dnf list installed mysql -y >>$LOG_FILES
 if [ $? -ne 0 ]
 then
     echo -e " $Y mysql is not installed...going to install $N " | tee -a $LOG_FILES
@@ -41,7 +43,7 @@ else
     echo -e " $G mysql is already installed ... nothing to do $N " | tee -a $LOG_FILES
 fi
 
-dnf list installed python3 -y
+dnf list installed python3 -y >>$LOG_FILES
 if [ $? -ne 0 ]
 then
     echo -e " python3 is not installed...going to install  $Y" | tee -a $LOG_FILES
