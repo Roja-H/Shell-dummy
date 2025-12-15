@@ -5,5 +5,5 @@
  #soo on upto 38
 
 
-echo -e \e[31m "hello"
+echo -e "\e[31m hello"
 echo "how are you"
