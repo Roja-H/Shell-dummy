@@ -5,7 +5,13 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+LOGS_FOLDER="/var/log/Shellscript.logs"
+SCRIPT_NAME=$(echo 14-colours.sh | cut -d "." -f1)
+LOG_FILES="$LOGS_FOLDER/$SCRIPT_NAME.log"
+
+mkdir -p $LOGS_FOLDER #-p indicates create a folder if already present then do nothing
 USERID=$(id -u)
+echo "script execution started at $(date)"
 
 if [ $USERID -ne 0 ]
 then
@@ -28,14 +34,14 @@ VALIDATE(){
 dnf list installed mysql -y
 if [ $? -ne 0 ]
 then
-    echo -e " $Y mysql is not installed...going to install "
+    echo -e " $Y mysql is not installed...going to install $N "
     dnf install mysql -y
     VALIDATE $? "mysql"
 else
-    echo -e " $G mysql is already installed ... nothing to do "
+    echo -e " $G mysql is already installed ... nothing to do $N "
 fi
 
-nf list installed python3 -y
+dnf list installed python3 -y
 if [ $? -ne 0 ]
 then
     echo -e " python3 is not installed...going to install  $Y"
