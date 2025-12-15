@@ -6,7 +6,7 @@ Y="\e[33m"
 N="\e[0m"
 
 LOGS_FOLDER="/var/log/Shellscript.logs"
-SCRIPT_NAME=$(echo 14-colourspart3.sh | cut -d "." -f1)
+SCRIPT_NAME=$(echo "14-colourspart3.sh" | cut -d "." -f1)
 LOG_FILES="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER #-p indicates create a folder if already present then do nothing
