@@ -36,7 +36,8 @@ VALIDATE(){
 }
 
 
-for package in ${PACKAGES[@]} 
+#for package in ${PACKAGES[@]}
+for package in $@  #to pass the package in arguments manually will use this else above command
 do 
   dnf list installed $package 
   if [ $? -ne 0 ]

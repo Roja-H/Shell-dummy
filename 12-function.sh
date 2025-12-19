@@ -30,7 +30,7 @@ else
     echo " mysql is already installed ... nothing to do"
 fi
 
-nf list installed python3 -y
+dnf list installed python3 -y
 if [ $? -ne 0 ]
 then
     echo " python3 is not installed...going to install "
@@ -40,7 +40,7 @@ else
     echo " python3 is already installed ... nothing to do"
 fi
 
-nf list installed nginx -y
+dnf list installed nginx -y
 if [ $? -ne 0 ]
 then
     echo " nginx is not installed...going to install "
