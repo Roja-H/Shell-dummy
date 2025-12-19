@@ -5,12 +5,11 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+mkdir -p $LOGS_FOLDER
 LOG_FOLDER="/var/logs/Shell-dummy-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 SOURCE_DIR=/home/ec2-user/app-logs
-
-mkdir -p $LOGS_FOLDER
 
 if [ $USERID -ne 0]
 then
