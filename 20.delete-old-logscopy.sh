@@ -12,6 +12,8 @@ SOURCE_DIR="/home/ec2-user/app-logs"
 
 trap 'failure "${LINENO}" "${BASH_COMMAND}"' ERR
 
+mkdir -p $LOGS_FOLDER
+
 if [ $USERID -ne 0]
 then
     echo " please check and run the script in root user " 
@@ -29,6 +31,6 @@ while read -r roja
 do
   echo " deleting this log files $roja "
   rm -rf $roja
-done<<$log-file
+done <<< $log-file
 
 echo "all worked successfully" 
