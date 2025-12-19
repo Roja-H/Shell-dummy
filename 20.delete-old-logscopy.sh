@@ -21,14 +21,14 @@ else
 fi
 
 
-echo " script started running at : $(date)
+echo "script started running at : $(date)"
 
 log-file = $(find $SOURCE_DIR -name "*.log" -mtime +14)
 
 while read -r roja
 do
-  echo " deleting this log files $roja "
+  echo "deleting this log files $roja"
   rm -rf $roja
 done <<< $log-file
 
-echo "all worked successfully"
+echo "Sucessfully exceuted"
