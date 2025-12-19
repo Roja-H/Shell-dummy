@@ -14,10 +14,10 @@ mkdir -p $LOGS_FOLDER
 
 if [ $USERID -ne 0]
 then
-    echo " please check and run the script in root user " 
+    echo "please check and run the script in root user" 
     exit 1
 else
-    echo " Script is running in root user" 
+    echo "Script is running in root user" 
 fi
 
 
@@ -31,4 +31,4 @@ do
   rm -rf $roja
 done <<< $log-file
 
-echo "all worked successfully" 
+echo "all worked successfully"
