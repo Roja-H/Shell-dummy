@@ -23,7 +23,7 @@ fi
 
 echo "script started running at : $(date)"
 
-log-file = $(find $SOURCE_DIR -name "*.log" -mtime +14)
+log-file=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
 while read -r roja
 do
